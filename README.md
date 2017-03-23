@@ -113,3 +113,40 @@ String / Array
 8. Find the smallest positive integer value that cannot be represented as sum of any subset of a given array
 9. Smallest subarray with sum greater than a given value
 10. Stock Buy Sell to Maximize Profit
+
+
+Iterative Post order:
+1.1 Create an empty stack
+2.1 Do following while root is not NULL
+    a) Push root's right child and then root to stack.
+    b) Set root as root's left child.
+2.2 Pop an item from stack and set it as root.
+    a) If the popped item has a right child and the right child 
+       is at top of stack, then remove the right child from stack,
+       push the root back and set root as root's right child.
+    b) Else print root's data and set root as NULL.
+2.3 Repeat steps 2.1 and 2.2 while stack is not empty.
+
+
+Iterative Preorder Traversal:
+Given a Binary Tree, write an iterative function to print Preorder traversal of the given binary tree.
+
+Refer this for recursive preorder traversal of Binary Tree. To convert an inherently recursive procedures to iterative, we need an explicit stack. Following is a simple stack based iterative process to print Preorder traversal.
+1) Create an empty stack nodeStack and push root node to stack.
+2) Do following while nodeStack is not empty.
+….a) Pop an item from stack and print it.
+….b) Push right child of popped item to stack
+….c) Push left child of popped item to stack
+
+
+Iterative Inorder Traversal:
+1) Create an empty stack S.
+2) Initialize current node as root
+3) Push the current node to S and set current = current->left until current is NULL
+4) If current is NULL and stack is not empty then 
+     a) Pop the top item from stack.
+     b) Print the popped item, set current = popped_item->right 
+     c) Go to step 3.
+5) If current is NULL and stack is empty then we are done.
+
+
